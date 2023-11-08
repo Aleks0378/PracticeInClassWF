@@ -10,6 +10,7 @@ namespace Lesson_08._11
         {
             InitializeComponent();
             this.Paint += Form1_Paint;
+            //new FontDialog().ShowDialog();
         }
 
         private void Form1_Paint(object? sender, PaintEventArgs e)
@@ -27,16 +28,29 @@ namespace Lesson_08._11
 
             //Task_2: Нарисовать круг, квадрат и треугольник, используя полную заливку цветом:
 
-            Brush brush = new SolidBrush(Color.DarkBlue);
-            Point[] points =
-            {
-                new Point(150,50),
-                new Point(250,175),
-                new Point(150,300)
-            };
-            g.FillRectangle(brush, 500,100,100,100);
-            g.FillEllipse(new SolidBrush(Color.DarkCyan), 300, 70, 170, 170);
-            g.FillPolygon(new SolidBrush(Color.Red), points);
+            //Brush brush = new SolidBrush(Color.DarkBlue);
+            //Point[] points =
+            //{
+            //    new Point(150,50),
+            //    new Point(250,175),
+            //    new Point(150,300)
+            //};
+            //g.FillRectangle(brush, 500,100,100,100);
+            //g.FillEllipse(new SolidBrush(Color.DarkCyan), 300, 70, 170, 170);
+            //g.FillPolygon(new SolidBrush(Color.Red), points);
+            //g.Dispose();
+
+            //Task_3: Используя класс  Font, отобразить текста с разными шрифтами, как на рисунке:
+
+            Font font = new Font("Verdana", 12);
+            Font font2 = new Font("Arial",14,FontStyle.Bold);
+            Font font3 = new Font("Calibri", 16, FontStyle.Italic);
+            Font font4 = new Font("Arial", 16, FontStyle.Underline);
+
+            g.DrawString("Обычный текст:", font, Brushes.Black, 30, 30);
+            g.DrawString("Жирный текст:", font2, Brushes.Red, 30, 60);
+            g.DrawString("Курсив:", font3, Brushes.DarkBlue, 30, 90);
+            g.DrawString("Подчеркнутый текст:", font4, Brushes.Green, 30, 120);
             g.Dispose();
         }
 
